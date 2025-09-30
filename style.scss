@@ -1,0 +1,125 @@
+---
+---
+/* Variables de color y fuentes */
+:root {
+    --color-bambu: #8B4513; /* Marrón tierra */
+    --color-verde: #4CAF50; /* Verde Ecoamigable */
+    --color-fondo-claro: #F8F8F8; /* Fondo suave, casi blanco */
+    --color-fondo-oscuro: #E6E6FA; /* Fondo de sección (Lavanda claro) */
+    --color-texto: #333;
+    --color-resalte: #FFC300; /* Amarillo/Dorado para botones */
+    --font-principal: 'Poppins', sans-serif;
+}
+
+/* Base Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-principal);
+    color: var(--color-texto);
+    background-color: var(--color-fondo-claro);
+    line-height: 1.6;
+}
+
+/* Tipografía y Enlaces */
+h2, h3, h4 {
+    color: var(--color-bambu);
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--color-verde);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-bambu);
+}
+
+/* Botones y Componentes */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--color-resalte);
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e0ac00; /* Un dorado más oscuro */
+}
+
+/* Header y Navegación */
+.Header {
+    background-color: white;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--color-fondo-oscuro);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: var(--color-verde);
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Secciones */
+section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+#hero {
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-bambu);
+    padding: 120px 40px;
+}
+
+#hero h2 {
+    font-size: 2.5em;
+    color: var(--color-verde);
+}
+
+#productos {
+    background-color: white;
+}
+
+.producto {
+    border: 1px solid var(--color-fondo-oscuro);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+    display: inline-block;
+    text-align: center;
+    max-width: 300px;
+}
+
+.producto .precio {
+    font-weight: 700;
+    color: var(--color-resalte);
+    font-size: 1.2em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-bambu);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
