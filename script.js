@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función de ejemplo para agregar al carrito
     function agregarAlCarrito(e) {
-        // Verifica si el clic fue en un botón con la clase "agregar-btn"
         if (e.target.classList.contains("agregar-btn")) {
             const idProducto = parseInt(e.target.dataset.id);
             const productoSeleccionado = productos.find(p => p.id === idProducto);
