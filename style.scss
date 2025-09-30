@@ -2,12 +2,12 @@
 ---
 /* Variables de color y fuentes */
 :root {
-    --color-bambu: #8B4513; /* Marrón tierra */
-    --color-verde: #4CAF50; /* Verde Ecoamigable */
-    --color-fondo-claro: #F8F8F8; /* Fondo suave, casi blanco */
-    --color-fondo-oscuro: #E6E6FA; /* Fondo de sección (Lavanda claro) */
+    --color-bambu: #8B4513; 
+    --color-verde: #4CAF50; 
+    --color-fondo-claro: #F8F8F8; 
+    --color-fondo-oscuro: #E6E6FA; 
     --color-texto: #333;
-    --color-resalte: #FFC300; /* Amarillo/Dorado para botones */
+    --color-resalte: #FFC300; 
     --font-principal: 'Poppins', sans-serif;
 }
 
@@ -52,10 +52,12 @@ a:hover {
     font-weight: 600;
     margin-top: 20px;
     transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #e0ac00; /* Un dorado más oscuro */
+    background-color: #e0ac00;
 }
 
 /* Header y Navegación */
@@ -93,6 +95,12 @@ section {
 #hero h2 {
     font-size: 2.5em;
     color: var(--color-verde);
+}
+
+#porque {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #productos {
