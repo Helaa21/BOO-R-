@@ -1,9 +1,4 @@
 # Configuración Mínima para BOO-RÚ
-# Esto le dice a Jekyll cómo construir el sitio
-
 title: BOO-RÚ | Muebles de Bambú Sostenibles
 description: Diseño ágil, materiales renovables. El futuro sostenible de tu hogar.
-baseurl: "/BOO-Ru" # CRUCIAL: Debe coincidir con el nombre exacto del repositorio
-
-# Asegura que Jekyll reconozca los archivos en la raíz
-include: [".htaccess", "_config.yml", "index.html", "style.scss", "script.js"]
+baseurl: "/BOO-Ru" # ESTO ES CRUCIAL
