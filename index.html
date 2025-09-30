@@ -21,20 +21,6 @@
 <body>
     ```
 
-### 2. Verificar Rutas de JS y CSS
-
-* **Ruta CSS en `index.html`:** Debe ser simplemente `href="style.css"`.
-* **Ruta JS en `index.html`:** Debe ser simplemente `src="script.js"`.
-
-### 3. Forzar el Despliegue Final
-
-1.  Aplica el cambio en tu archivo **`index.html`**.
-2.  Haz **Commit y Push** (esto forzará una nueva compilación, aunque la anterior haya tenido check verde).
-3.  Ve a la pestaña **Actions** y espera el nuevo **check verde (✔)**.
-4.  Una vez que termine, abre tu sitio web y debería funcionar en **ambos dispositivos**.
-
-La etiqueta `<base>` resuelve el conflicto de ruta que existe entre la raíz del dominio y la raíz de tu proyecto, asegurando que el navegador encuentre el `style.css` que Jekyll ya compiló.
-    
 </head>
 <body>
     <header class="Header">
