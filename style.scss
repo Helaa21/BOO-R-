@@ -2,226 +2,75 @@
 ---
 /* Variables de color y fuentes - Paleta LIME */
 :root {
-    --color-lime-vibrante: #8dc63f; /* Verde LIME brillante */
-    --color-verde-oscuro: #2e6008; /* Verde Profundo para texto/fondo */
+    --color-lime-vibrante: #8dc63f; 
+    --color-verde-oscuro: #2e6008; 
     --color-fondo-claro: #F8F8F8; 
     --color-texto-claro: white;
     --color-texto-oscuro: #333;
     --font-principal: 'Poppins', sans-serif;
 }
 
-/* Base Global */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* BASE y Tipografía */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-principal); color: var(--color-texto-oscuro); background-color: var(--color-fondo-claro); line-height: 1.6; }
+h2 { font-size: 3em; font-weight: 800; color: var(--color-verde-oscuro); text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); }
+h3, h4 { color: var(--color-verde-oscuro); font-weight: 700; }
 
-body {
-    font-family: var(--font-principal);
-    color: var(--color-texto-oscuro);
-    background-color: var(--color-fondo-claro);
-    line-height: 1.6;
-}
-
-/* Tipografía y Enlaces */
-h2 {
-    font-size: 3em;
-    font-weight: 800; 
-    color: var(--color-verde-oscuro); /* CORRECCIÓN: Usar verde oscuro si no hay imagen de fondo */
-    margin-bottom: 0.5em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
-h3, h4 {
-    color: var(--color-verde-oscuro);
-    margin-bottom: 0.5em;
-    font-weight: 700;
-}
-
-a {
-    color: var(--color-lime-vibrante);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--color-verde-oscuro);
-}
-
-/* Botones y Componentes - Estilo LIME */
+/* Botones Dinámicos */
 .btn-lime {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--color-lime-vibrante);
-    color: white;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 20px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    border: none;
-    cursor: pointer;
+    display: inline-block; padding: 12px 25px; background-color: var(--color-lime-vibrante); color: white;
+    border-radius: 5px; text-transform: uppercase; font-weight: 600; margin-top: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s; border: none; cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+.btn-lime:hover { background-color: var(--color-verde-oscuro); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); }
 
-.btn-lime:hover {
-    background-color: var(--color-verde-oscuro);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.btn-large {
-    padding: 15px 30px;
-    font-size: 1.2em;
-}
-
-/* Header y Navegación */
+/* Header y Navegación (CORREGIDO PARA VISIBILIDAD) */
 .Header {
-    background: white; /* Fondo blanco visible */
-    padding: 20px 40px;
-    width: 100%;
-    z-index: 10;
+    background: white; /* Fondo blanco para que la navegación sea visible */
+    padding: 20px 40px; width: 100%; z-index: 10;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px; /* Centrar contenido */
-    margin: 0 auto;
-}
-
-.logo-lime {
-    color: var(--color-verde-oscuro); /* CORRECCIÓN: Logo oscuro sobre fondo blanco */
-    font-size: 2em;
-    font-weight: 700;
-    margin: 0;
-}
-
-.nav-links a {
-    color: var(--color-texto-oscuro); /* CORRECCIÓN: Enlaces oscuros sobre fondo blanco */
-    margin-left: 20px;
-    font-weight: 500;
-    position: relative;
+nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.logo-lime { color: var(--color-verde-oscuro); font-size: 2em; font-weight: 700; }
+.nav-links a { 
+    color: var(--color-texto-oscuro); margin-left: 20px; font-weight: 500; position: relative; 
     /* Efecto de subrayado dinámico */
+    transition: color 0.3s;
 }
-.nav-links a:hover {
-    color: var(--color-lime-vibrante);
-}
+.nav-links a:hover { color: var(--color-lime-vibrante); }
 
-/* Animación de subrayado dinámico */
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    margin-top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-lime-vibrante);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* Sección Hero - Fondo de color si la imagen falla o se carga parcialmente */
+/* Sección Hero (Visual LIME) */
 .hero-lime {
     height: 70vh; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    background-color: var(--color-fondo-oscuro); /* Fondo sutil para el área del hero */
-    
-    /* Intento de cargar la imagen (debes tener la imagen subida) */
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; position: relative;
+    /* RUTA DE IMAGEN: Verifica que este nombre sea CORRECTO y exista. */
     background: url('{{ site.baseurl }}/Imagen de WhatsApp 2025-09-30 a las 11.40.47_c844c92b.jpg') no-repeat center center/cover; 
-    
-    /* Capa de sombra para asegurar la visibilidad del texto si la imagen es muy clara */
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.1); /* Ligera sombra */
-    }
 }
-
 .hero-content {
-    z-index: 5;
-    padding: 20px;
-    animation: fadeInDown 1s ease-out; /* Dinámico: aparece desde arriba */
+    z-index: 5; padding: 20px;
+    animation: fadeInDown 1s ease-out; /* Animación dinámica */
 }
+.tagline-lime { color: var(--color-lime-vibrante); font-weight: 600; font-size: 1.1em; }
 
-.tagline-lime {
-    color: var(--color-lime-vibrante);
-    font-weight: 600;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-}
-
-/* Animación del contenido principal */
+/* Animación de entrada */
 @keyframes fadeInDown {
     0% { opacity: 0; transform: translateY(-20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Secciones Generales */
-section {
-    padding: 80px 40px;
-    text-align: center;
-}
-
-#porque {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.lista-lime li {
-    list-style-type: '🌿 ';
-    margin-left: 20px;
-}
-
-#productos {
-    background-color: white;
-}
-
-/* Dinámico: Efecto de elevación al pasar el ratón por el producto */
+/* SECCIÓN PRODUCTOS (DINÁMICO) */
 .producto {
-    border: 1px solid var(--color-fondo-claro);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px;
-    display: inline-block;
-    text-align: center;
-    max-width: 300px;
+    border: 1px solid var(--color-fondo-claro); border-radius: 8px; padding: 20px; margin: 15px;
+    display: inline-block; text-align: center; max-width: 300px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .producto:hover {
     transform: translateY(-8px); /* Se eleva más */
-    box-shadow: 0 15px 30px rgba(46, 96, 8, 0.2); /* Sombra intensa del color verde oscuro */
+    box-shadow: 0 15px 30px rgba(46, 96, 8, 0.2); /* Sombra intensa del color LIME */
 }
 
-.producto .precio {
-    font-weight: 700;
-    color: var(--color-verde-oscuro);
-    font-size: 1.2em;
-}
-
-/* Footer - Color verde LIME */
-footer {
-    background-color: var(--color-lime-vibrante);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-}
+/* FOOTER */
+footer { background-color: var(--color-lime-vibrante); color: white; padding: 20px; text-align: center; width: 100%; }
