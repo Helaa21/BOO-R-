@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOO-RÚ | Muebles de Bambú Sostenibles</title>
+    <title>{{ site.title }}</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css"> 
 </head>
@@ -23,7 +23,7 @@
                     <a href="#">Filosofía</a>
                     <a href="#">Contacto</a>
                 </div>
-                <button class="btn-lime">🛒 (0)</button>
+                <button class="btn-lime" id="carrito-icono">🛒 (0)</button>
             </nav>
         </header>
 
@@ -63,7 +63,9 @@
     <aside id="carrito-sidebar" class="carrito-sidebar">
         <button id="cerrar-carrito-btn">X Cerrar</button>
         <h4>Tu Carrito</h4>
-        <p>El carrito está vacío.</p>
+        <div id="carrito-contenido">
+            <p>El carrito está vacío.</p>
+        </div>
     </aside>
 
     <footer>
