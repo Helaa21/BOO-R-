@@ -27,7 +27,7 @@ body {
 /* Tipografía y Enlaces */
 h2 {
     font-size: 3em;
-    font-weight: 800; /* Extra bold */
+    font-weight: 800; 
     color: var(--color-texto-claro);
     margin-bottom: 0.5em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
@@ -76,6 +76,7 @@ a:hover {
 
 /* Header y Navegación (Superpuesto en Hero) */
 .Header {
+    /* Fondo transparente, va sobre la imagen */
     background: none;
     padding: 20px 40px;
     position: absolute;
@@ -109,20 +110,21 @@ nav {
 
 /* Sección Hero - Fondo de imagen de hojas como LIME */
 .hero-lime {
-    height: 70vh; /* Ajusta la altura */
+    height: 70vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    /* Necesitas una imagen de fondo de hojas subida a tu repo y linkeada aquí */
-    background: url('{{ site.baseurl }}/imagen-de-hojas.jpg') no-repeat center center/cover; 
+    /* La imagen debe estar en la raíz de tu repositorio y llamarse 'imagen-de-hojas.jpg' */
+    background: url('{{ site.baseurl }}/Imagen de WhatsApp 2025-09-30 a las 11.40.47_c844c92b.jpg') no-repeat center center/cover; 
+    /* El nombre de archivo de la imagen que subiste es largo, lo incluyo aquí. Si lo renombras a 'hojas.jpg', cambia el url() */
 }
 
 .hero-content {
     z-index: 5;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.1); /* Sutil sombra para mejor legibilidad */
+    background-color: rgba(0, 0, 0, 0.1); 
 }
 
 .tagline-lime {
