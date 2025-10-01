@@ -7,39 +7,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOO-RÚ | Muebles de Bambú Sostenibles</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css"> 
 </head>
 <body>
-    ```
-*(Nota: El resto de tu HTML con las clases **`hero-lime`**, **`btn-lime`**, etc., ya está bien. Solo nos centramos en la cabecera.)*
+    
+    <section id="hero" class="hero-lime">
+        
+        <header class="Header">
+            <nav>
+                <h1 class="logo-lime">BOO-RÚ</h1>
+                <div class="nav-links">
+                    <a href="#">Tienda</a>
+                    <a href="#">Filosofía</a>
+                    <a href="#">Contacto</a>
+                </div>
+                <button class="btn-lime">🛒 (0)</button>
+            </nav>
+        </header>
 
----
+        <div class="hero-content">
+            <p class="tagline-lime">Vive en armonía. VIVE BOO-RÚ.</p>
+            <h2>Muebles Complementarios de Bambú.</h2>
+            <a href="#productos" class="btn-lime btn-large">Explorar Colección</a>
+        </div>
+    </section>
 
-## ✅ Verificaciones Finales
+    <section id="porque">
+        <h3>Nuestra Historia en Cada Caña</h3>
+        <h4>¿Por que BOO-RÚ?</h4>
+        <p>Nacimos de la pasión por el diseño y el respeto por el planeta. El bambú no es solo una planta, es un <strong>material revolucionario</strong>: crece rápido, es increíblemente fuerte y su uso ayuda a combatir la deforestación. Cada mueble que creamos cuenta la historia de un compromiso con un futuro más verde.</p>
+        <p>Somos <strong>ecoamigables</strong> en cada paso, desde la cosecha sostenible hasta el embalaje. Tu elección de BOO-RÚ es un voto por la durabilidad, el estilo y la vida consciente. 🌿</p>
+        <ul class="lista-lime">
+            <li>Ultra Resistente</li>
+            <li>100% Renovable</li>
+            <li>Crecimiento Rápido</li>
+        </ul>
+    </section>
 
-Si haces esta corrección en el `index.html`, la web se verá **dinámica y actualizada**.
+    <section id="productos">
+        <h3>Pide y Compra tu Mueble</h3>
+        <p>Encuentra el complemento perfecto para tu espacio.</p>
+        
+        <div id="contenedor-productos">
+            <div class="producto">
+                <h4>Silla ZEN</h4>
+                <p>Minimalista y ergonómica.</p>
+                <p class="precio">$85.00</p>
+                <button class="agregar-btn btn-lime" data-id="1">Añadir al carrito</button>
+            </div>
+            </div>
+    </section>
 
-### 2. Verificar `style.scss` (Nombre y Contenido)
+    <aside id="carrito-sidebar" class="carrito-sidebar">
+        <button id="cerrar-carrito-btn">X Cerrar</button>
+        <h4>Tu Carrito</h4>
+        <p>El carrito está vacío.</p>
+    </aside>
 
-* **Nombre:** El archivo se llama `style.scss`. Esto es correcto para que Jekyll lo compile a `style.css`.
-* **Contenido:** Asegúrate de que tenga las dos líneas de cabecera YAML al inicio para que Jekyll lo compile:
-    ```scss
-    ---
-    ---
-    /* Variables de color y fuentes... */
-    ```
+    <footer>
+        <p>&copy; 2025 BOO-RÚ. Diseño LIME.</p>
+    </footer>
 
-### 3. Verificar `_config.yml` (Ya Está Bien)
-
-* Tu `_config.yml` ya está **perfecto** y sin sangrías, como muestra la captura.
-
----
-
-## Pasos a Seguir
-
-1.  **CORRIGE** el archivo **`index.html`** eliminando los enlaces CSS duplicados y dejando **solo uno** con `{{ site.baseurl }}/style.css`.
-2.  **Haz Commit y Push** de tu `index.html` y `style.scss`.
-3.  Espera a que GitHub Actions termine la compilación (debería salir el check verde).
-4.  Abre tu sitio web y haz una **recarga forzada** (`Ctrl + Shift + R` o `Cmd + Shift + R`).
+    <script src="script.js" defer></script>
+</body>
+</html>
