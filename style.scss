@@ -1,13 +1,12 @@
 ---
 ---
-/* Variables de color y fuentes */
+/* Variables de color y fuentes - Paleta LIME */
 :root {
-    --color-bambu: #8B4513; 
-    --color-verde: #4CAF50; 
+    --color-lime-vibrante: #8dc63f; /* Verde LIME brillante */
+    --color-verde-oscuro: #2e6008; /* Verde Profundo para texto/fondo */
     --color-fondo-claro: #F8F8F8; 
-    --color-fondo-oscuro: #E6E6FA; 
-    --color-texto: #333;
-    --color-resalte: #FFC300; 
+    --color-texto-claro: white;
+    --color-texto-oscuro: #333;
     --font-principal: 'Poppins', sans-serif;
 }
 
@@ -20,32 +19,40 @@
 
 body {
     font-family: var(--font-principal);
-    color: var(--color-texto);
+    color: var(--color-texto-oscuro);
     background-color: var(--color-fondo-claro);
     line-height: 1.6;
 }
 
 /* Tipografía y Enlaces */
-h2, h3, h4 {
-    color: var(--color-bambu);
+h2 {
+    font-size: 3em;
+    font-weight: 800; /* Extra bold */
+    color: var(--color-texto-claro);
     margin-bottom: 0.5em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+h3, h4 {
+    color: var(--color-verde-oscuro);
+    margin-bottom: 0.5em;
+    font-weight: 700;
 }
 
 a {
-    color: var(--color-verde);
+    color: var(--color-lime-vibrante);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: var(--color-bambu);
+    color: var(--color-verde-oscuro);
 }
 
-/* Botones y Componentes */
-.btn {
+/* Botones y Componentes - Estilo LIME */
+.btn-lime {
     display: inline-block;
     padding: 12px 25px;
-    background-color: var(--color-resalte);
+    background-color: var(--color-lime-vibrante);
     color: white;
     border-radius: 5px;
     text-transform: uppercase;
@@ -54,18 +61,28 @@ a:hover {
     transition: background-color 0.3s;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn:hover {
-    background-color: #e0ac00;
+.btn-lime:hover {
+    background-color: var(--color-verde-oscuro);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Header y Navegación */
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.2em;
+}
+
+/* Header y Navegación (Superpuesto en Hero) */
 .Header {
-    background-color: white;
+    background: none;
     padding: 20px 40px;
-    border-bottom: 1px solid var(--color-fondo-oscuro);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 nav {
@@ -74,27 +91,51 @@ nav {
     align-items: center;
 }
 
-nav h1 {
-    color: var(--color-verde);
+.logo-lime {
+    color: var(--color-texto-claro);
     font-size: 2em;
     margin: 0;
+    font-weight: 700;
 }
 
-/* Secciones */
+.nav-links a {
+    color: var(--color-texto-claro);
+    margin-left: 20px;
+    font-weight: 500;
+}
+.nav-links a:hover {
+    color: var(--color-lime-vibrante);
+}
+
+/* Sección Hero - Fondo de imagen de hojas como LIME */
+.hero-lime {
+    height: 70vh; /* Ajusta la altura */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    /* Necesitas una imagen de fondo de hojas subida a tu repo y linkeada aquí */
+    background: url('{{ site.baseurl }}/imagen-de-hojas.jpg') no-repeat center center/cover; 
+}
+
+.hero-content {
+    z-index: 5;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1); /* Sutil sombra para mejor legibilidad */
+}
+
+.tagline-lime {
+    color: var(--color-lime-vibrante);
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Secciones Generales */
 section {
     padding: 80px 40px;
     text-align: center;
-}
-
-#hero {
-    background-color: var(--color-fondo-oscuro);
-    color: var(--color-bambu);
-    padding: 120px 40px;
-}
-
-#hero h2 {
-    font-size: 2.5em;
-    color: var(--color-verde);
 }
 
 #porque {
@@ -103,29 +144,35 @@ section {
     margin: 0 auto;
 }
 
+.lista-lime li {
+    list-style-type: '🌿 ';
+    margin-left: 20px;
+}
+
 #productos {
     background-color: white;
 }
 
 .producto {
-    border: 1px solid var(--color-fondo-oscuro);
+    border: 1px solid var(--color-fondo-claro);
     border-radius: 8px;
     padding: 20px;
     margin: 15px;
     display: inline-block;
     text-align: center;
     max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .producto .precio {
     font-weight: 700;
-    color: var(--color-resalte);
+    color: var(--color-verde-oscuro);
     font-size: 1.2em;
 }
 
-/* Footer */
+/* Footer - Color verde LIME */
 footer {
-    background-color: var(--color-bambu);
+    background-color: var(--color-lime-vibrante);
     color: white;
     padding: 20px;
     text-align: center;
