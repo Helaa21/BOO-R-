@@ -28,9 +28,9 @@ body {
 h2 {
     font-size: 3em;
     font-weight: 800; 
-    color: var(--color-texto-claro);
+    color: var(--color-verde-oscuro); /* CORRECCIÓN: Usar verde oscuro si no hay imagen de fondo */
     margin-bottom: 0.5em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 h3, h4 {
     color: var(--color-verde-oscuro);
@@ -58,7 +58,7 @@ a:hover {
     text-transform: uppercase;
     font-weight: 600;
     margin-top: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -74,57 +74,89 @@ a:hover {
     font-size: 1.2em;
 }
 
-/* Header y Navegación (Superpuesto en Hero) */
+/* Header y Navegación */
 .Header {
-    /* Fondo transparente, va sobre la imagen */
-    background: none;
+    background: white; /* Fondo blanco visible */
     padding: 20px 40px;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px; /* Centrar contenido */
+    margin: 0 auto;
 }
 
 .logo-lime {
-    color: var(--color-texto-claro);
+    color: var(--color-verde-oscuro); /* CORRECCIÓN: Logo oscuro sobre fondo blanco */
     font-size: 2em;
-    margin: 0;
     font-weight: 700;
+    margin: 0;
 }
 
 .nav-links a {
-    color: var(--color-texto-claro);
+    color: var(--color-texto-oscuro); /* CORRECCIÓN: Enlaces oscuros sobre fondo blanco */
     margin-left: 20px;
     font-weight: 500;
+    position: relative;
+    /* Efecto de subrayado dinámico */
 }
 .nav-links a:hover {
     color: var(--color-lime-vibrante);
 }
 
-/* Sección Hero - Fondo de imagen de hojas como LIME */
+/* Animación de subrayado dinámico */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-lime-vibrante);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Sección Hero - Fondo de color si la imagen falla o se carga parcialmente */
 .hero-lime {
     height: 70vh; 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    /* La imagen debe estar en la raíz de tu repositorio y llamarse 'imagen-de-hojas.jpg' */
+    background-color: var(--color-fondo-oscuro); /* Fondo sutil para el área del hero */
+    
+    /* Intento de cargar la imagen (debes tener la imagen subida) */
     background: url('{{ site.baseurl }}/Imagen de WhatsApp 2025-09-30 a las 11.40.47_c844c92b.jpg') no-repeat center center/cover; 
-    /* El nombre de archivo de la imagen que subiste es largo, lo incluyo aquí. Si lo renombras a 'hojas.jpg', cambia el url() */
+    
+    /* Capa de sombra para asegurar la visibilidad del texto si la imagen es muy clara */
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.1); /* Ligera sombra */
+    }
 }
 
 .hero-content {
     z-index: 5;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.1); 
+    animation: fadeInDown 1s ease-out; /* Dinámico: aparece desde arriba */
 }
 
 .tagline-lime {
@@ -132,6 +164,12 @@ nav {
     font-weight: 600;
     margin-bottom: 10px;
     font-size: 1.1em;
+}
+
+/* Animación del contenido principal */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Secciones Generales */
@@ -155,6 +193,7 @@ section {
     background-color: white;
 }
 
+/* Dinámico: Efecto de elevación al pasar el ratón por el producto */
 .producto {
     border: 1px solid var(--color-fondo-claro);
     border-radius: 8px;
@@ -163,7 +202,13 @@ section {
     display: inline-block;
     text-align: center;
     max-width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-8px); /* Se eleva más */
+    box-shadow: 0 15px 30px rgba(46, 96, 8, 0.2); /* Sombra intensa del color verde oscuro */
 }
 
 .producto .precio {
