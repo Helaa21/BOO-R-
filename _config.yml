@@ -1,4 +1,4 @@
- mhbbbbbbn# Configuración Mínima para BOO-RÚ
+# Configuración Mínima para BOO-RÚ
 title: BOO-RÚ | Muebles de Bambú Sostenibles
 description: Diseño ágil, materiales renovables. El futuro sostenible de tu hogar.
-baseurl: "/BOO-Ru" # ESTO ES CRUCIAL
+baseurl: "/BOO-Ru"
